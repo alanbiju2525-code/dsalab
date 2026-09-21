@@ -1,0 +1,6 @@
+{
+  "name": "DSA Java Programs",
+  "description": "A simple static website for downloading Java DSA program files.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

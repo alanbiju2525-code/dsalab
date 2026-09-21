@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DSA Java Programs</title>
+    <meta name="description" content="A simple static website for downloading Java DSA program files." />
+    <meta property="og:title" content="DSA Java Programs" />
+    <meta property="og:description" content="A simple static website for downloading Java DSA program files." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        background-color: #ffffff;
+        color: #111111;
+        line-height: 1.5;
+        padding: 24px 16px;
+      }
+
+      .container {
+        max-width: 580px;
+        margin: 32px auto;
+        padding: 0 8px;
+      }
+
+      h1 {
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #111111;
+        text-align: center;
+      }
+
+      .full-download-wrapper {
+        text-align: center;
+        margin-bottom: 32px;
+      }
+
+      .btn-full {
+        display: inline-block;
+        background-color: #0b57d0;
+        color: #ffffff;
+        text-decoration: none;
+        padding: 10px 22px;
+        font-size: 15px;
+        font-weight: 500;
+        border-radius: 4px;
+      }
+
+      .btn-full:hover {
+        background-color: #0842a0;
+      }
+
+      .program-list {
+        list-style: none;
+        border-top: 1px solid #e5e7eb;
+      }
+
+      .program-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 4px;
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      .program-name {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: 15px;
+        color: #111111;
+      }
+
+      .btn-download {
+        display: inline-block;
+        background-color: #0b57d0;
+        color: #ffffff;
+        text-decoration: none;
+        padding: 5px 12px;
+        font-size: 13px;
+        font-weight: 500;
+        border-radius: 4px;
+        white-space: nowrap;
+      }
+
+      .btn-download:hover {
+        background-color: #0842a0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="main-container">
+      <h1 id="page-heading">DSA Java Programs</h1>
+
+      <div class="full-download-wrapper" id="full-download-section">
+        <a href="DSA_JAVA_PROGRAMS.zip" download="DSA_JAVA_PROGRAMS.zip" class="btn-full" id="btn-download-full-folder">Download Full Folder (.zip)</a>
+      </div>
+
+      <ul class="program-list" id="program-list">
+        
+        <li class="program-item" id="item-stack-array">
+          <span class="program-name">stack_array.java</span>
+          <a href="programs/stack_array.java" download="stack_array.java" class="btn-download" id="download-stack-array">Download</a>
+        </li>
+        <li class="program-item" id="item-reverse-stack">
+          <span class="program-name">reverse_stack.java</span>
+          <a href="programs/reverse_stack.java" download="reverse_stack.java" class="btn-download" id="download-reverse-stack">Download</a>
+        </li>
+        <li class="program-item" id="item-parentheses">
+          <span class="program-name">parentheses.java</span>
+          <a href="programs/parentheses.java" download="parentheses.java" class="btn-download" id="download-parentheses">Download</a>
+        </li>
+        <li class="program-item" id="item-queue">
+          <span class="program-name">queue.java</span>
+          <a href="programs/queue.java" download="queue.java" class="btn-download" id="download-queue">Download</a>
+        </li>
+        <li class="program-item" id="item-circular-queue">
+          <span class="program-name">circular_queue.java</span>
+          <a href="programs/circular_queue.java" download="circular_queue.java" class="btn-download" id="download-circular-queue">Download</a>
+        </li>
+        <li class="program-item" id="item-deque">
+          <span class="program-name">deque.java</span>
+          <a href="programs/deque.java" download="deque.java" class="btn-download" id="download-deque">Download</a>
+        </li>
+        <li class="program-item" id="item-decimal-binary">
+          <span class="program-name">decimal_binary.java</span>
+          <a href="programs/decimal_binary.java" download="decimal_binary.java" class="btn-download" id="download-decimal-binary">Download</a>
+        </li>
+        <li class="program-item" id="item-doubly-linkedlist">
+          <span class="program-name">doubly_linkedlist.java</span>
+          <a href="programs/doubly_linkedlist.java" download="doubly_linkedlist.java" class="btn-download" id="download-doubly-linkedlist">Download</a>
+        </li>
+        <li class="program-item" id="item-palindrome-dll">
+          <span class="program-name">palindrome_dll.java</span>
+          <a href="programs/palindrome_dll.java" download="palindrome_dll.java" class="btn-download" id="download-palindrome-dll">Download</a>
+        </li>
+        <li class="program-item" id="item-sorting">
+          <span class="program-name">sorting.java</span>
+          <a href="programs/sorting.java" download="sorting.java" class="btn-download" id="download-sorting">Download</a>
+        </li>
+        <li class="program-item" id="item-binary-search-tree">
+          <span class="program-name">binary_search_tree.java</span>
+          <a href="programs/binary_search_tree.java" download="binary_search_tree.java" class="btn-download" id="download-binary-search-tree">Download</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
