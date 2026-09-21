@@ -1,157 +1,72 @@
 import java.util.Scanner;
 
-public class doubly_linkedlist {
+public class palindrome_dll {
 
     static class Node {
-        int data;
+        char data;
         Node prev;
         Node next;
 
-        Node(int data) {
+        Node(char data) {
             this.data = data;
         }
     }
 
     static Node head = null;
+    static Node tail = null;
 
-    static void insert(int value, int position) {
+    static void insert(char value) {
 
         Node newNode = new Node(value);
 
-        if (position == 1) {
-
-            newNode.next = head;
-
-            if (head != null) {
-                head.prev = newNode;
-            }
-
-            head = newNode;
-            return;
-        }
-
-        Node temp = head;
-
-        for (int i = 1; i < position - 1 && temp != null; i++) {
-            temp = temp.next;
-        }
-
-        if (temp == null) {
-            System.out.println("Invalid position.");
-            return;
-        }
-
-        newNode.next = temp.next;
-        newNode.prev = temp;
-
-        if (temp.next != null) {
-            temp.next.prev = newNode;
-        }
-
-        temp.next = newNode;
-    }
-
-    static void delete(int position) {
-
         if (head == null) {
-            System.out.println("List is empty.");
-            return;
-        }
-
-        Node temp = head;
-
-        if (position == 1) {
-
-            head = head.next;
-
-            if (head != null) {
-                head.prev = null;
-            }
-
-            return;
-        }
-
-        for (int i = 1; i < position && temp != null; i++) {
-            temp = temp.next;
-        }
-
-        if (temp == null) {
-            System.out.println("Invalid position.");
-            return;
-        }
-
-        if (temp.prev != null) {
-            temp.prev.next = temp.next;
-        }
-
-        if (temp.next != null) {
-            temp.next.prev = temp.prev;
+            head = tail = newNode;
+        } else {
+            tail.next = newNode;
+            newNode.prev = tail;
+            tail = newNode;
         }
     }
 
-    static void display() {
+    static boolean isPalindrome() {
 
-        if (head == null) {
-            System.out.println("List is empty.");
-            return;
+        Node left = head;
+        Node right = tail;
+
+        while (left != null && right != null) {
+
+            if (left.data != right.data) {
+                return false;
+            }
+
+            if (left == right || left.next == right) {
+                break;
+            }
+
+            left = left.next;
+            right = right.prev;
         }
 
-        Node temp = head;
-
-        System.out.println("Doubly linked list:");
-
-        while (temp != null) {
-            System.out.print(temp.data + " ");
-            temp = temp.next;
-        }
-
-        System.out.println();
+        return true;
     }
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
-        while (true) {
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
 
-            System.out.println("\n1. Insert");
-            System.out.println("2. Delete");
-            System.out.println("3. Display");
-            System.out.println("4. Exit");
-
-            System.out.print("Enter your choice: ");
-            int choice = sc.nextInt();
-
-            switch (choice) {
-
-                case 1:
-                    System.out.print("Enter value: ");
-                    int value = sc.nextInt();
-
-                    System.out.print("Enter position: ");
-                    int pos = sc.nextInt();
-
-                    insert(value, pos);
-                    break;
-
-                case 2:
-                    System.out.print("Enter position: ");
-                    pos = sc.nextInt();
-
-                    delete(pos);
-                    break;
-
-                case 3:
-                    display();
-                    break;
-
-                case 4:
-                    sc.close();
-                    return;
-
-                default:
-                    System.out.println("Invalid choice.");
-            }
+        for (int i = 0; i < str.length(); i++) {
+            insert(str.charAt(i));
         }
+
+        if (isPalindrome()) {
+            System.out.println("The string is a palindrome.");
+        } else {
+            System.out.println("The string is not a palindrome.");
+        }
+
+        sc.close();
     }
 }
